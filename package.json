@@ -1,0 +1,55 @@
+{
+  "name": "openclaw-plugin-deepseek-search",
+  "version": "0.1.0",
+  "description": "DeepSeek native web search provider for OpenClaw's managed web_search tool.",
+  "type": "module",
+  "license": "MIT",
+  "keywords": [
+    "openclaw",
+    "openclaw-plugin",
+    "deepseek",
+    "web-search",
+    "search",
+    "llm",
+    "ai-agent"
+  ],
+  "files": [
+    "dist/**",
+    "openclaw.plugin.json",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "test": "node tests/harness.mjs && node tests/e2e.mjs",
+    "test:unit": "node tests/harness.mjs",
+    "test:e2e": "node tests/e2e.mjs"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "peerDependencies": {
+    "openclaw": ">=2026.10.9"
+  },
+  "peerDependenciesMeta": {
+    "openclaw": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "openclaw": "2026.10.9"
+  },
+  "openclaw": {
+    "extensions": [
+      "./dist/index.js"
+    ],
+    "compat": {
+      "pluginApi": ">=2026.10.9"
+    },
+    "build": {
+      "openclawVersion": "2026.10.9"
+    },
+    "install": {
+      "minHostVersion": ">=2026.10.9"
+    }
+  }
+}

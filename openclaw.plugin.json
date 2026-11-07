@@ -1,0 +1,92 @@
+{
+  "id": "deepseek-search",
+  "name": "DeepSeek Search",
+  "description": "DeepSeek native web search provider for the managed web_search tool.",
+  "version": "0.1.0",
+  "categories": [
+    "tools"
+  ],
+  "activation": {
+    "onStartup": true
+  },
+  "contracts": {
+    "webSearchProviders": [
+      "deepseek-search"
+    ]
+  },
+  "configGroups": [
+    {
+      "id": "web-search",
+      "title": "Web search",
+      "order": 10,
+      "properties": [
+        "webSearch"
+      ]
+    }
+  ],
+  "uiHints": {
+    "webSearch.apiKey": {
+      "label": "DeepSeek API key",
+      "help": "Bearer token for api.deepseek.com. Falls back to DEEPSEEK_API_KEY in the Gateway environment.",
+      "sensitive": true,
+      "placeholder": "sk-..."
+    },
+    "webSearch.baseUrl": {
+      "label": "Base URL",
+      "help": "Defaults to https://api.deepseek.com."
+    },
+    "webSearch.maxResults": {
+      "label": "Max results",
+      "help": "Default result count when the tool call does not pass one (1-50)."
+    },
+    "webSearch.needContent": {
+      "label": "Return page content by default",
+      "help": "Sends need_content: true. Slower and produces much larger responses."
+    },
+    "webSearch.cacheTtlMinutes": {
+      "label": "Cache TTL (minutes)",
+      "help": "In-memory cache for identical queries. 0 disables caching."
+    }
+  },
+  "configSchema": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+      "webSearch": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "apiKey": {
+            "type": [
+              "string",
+              "object"
+            ]
+          },
+          "baseUrl": {
+            "type": "string"
+          },
+          "maxResults": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 50
+          },
+          "needContent": {
+            "type": "boolean"
+          },
+          "localization": {
+            "type": "string"
+          },
+          "timeoutSeconds": {
+            "type": "number",
+            "minimum": 1,
+            "maximum": 300
+          },
+          "cacheTtlMinutes": {
+            "type": "number",
+            "minimum": 0
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,14 @@
+node_modules/
+package-lock.json
+tmp/
+*.log
+.env
+.env.*
+.DS_Store
+Thumbs.db
+.clawhub-validation/
+
+# local OpenClaw state when testing against a checkout
+openclaw.json
+state/
+extensions/
