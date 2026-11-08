@@ -14,7 +14,7 @@ Kimi、MiniMax、Ollama、Parallel、Perplexity、SearXNG、Tavily）里没有 D
 
 - Provider / 插件 id：`deepseek-search`
 - 依赖：只用 `openclaw/plugin-sdk/plugin-entry` 这个公开入口，无第三方运行时依赖
-- 宿主：OpenClaw `>= 2026.10.9`，Node `>= 22`
+- 宿主：OpenClaw `>= 2026.10.9`，Node `>= 24.22.1`
 - 只注册 `webSearchProviders`，**不改动 `web_fetch` 的任何默认路由**
 
 ## 安装
